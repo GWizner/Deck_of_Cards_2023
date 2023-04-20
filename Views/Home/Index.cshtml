@@ -1,0 +1,15 @@
+﻿@model DrawResponse
+
+@if(Model != null)
+{
+        @foreach(var card in Model.cards)
+        {
+            <p>@card.value of @card.suit</p>
+            <img src="@card.image" alt="@card.code" />
+        }
+}
+else
+{
+    <p>Sorry, something went wrong.</p>
+    <p>@ViewBag.Exception</p>
+}
